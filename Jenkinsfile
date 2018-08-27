@@ -44,12 +44,13 @@ pipeline {
 				  }
 				  
 				  else {
+				  
 				              try {
             bat 'exit 1'
         }
-        catch (exc) {
+        catch (Exception e) {
             echo 'Something failed, I should sound the klaxons!'
-            throw
+            throw e
         }
 				  }
 
