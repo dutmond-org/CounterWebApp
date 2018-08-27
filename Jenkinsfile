@@ -1,6 +1,3 @@
-def jobnameparts = JOB_NAME.tokenize('/') as String[]
-def repositoryname = jobnameparts[1]
-
 pipeline {	
     agent {
         label 'master'
