@@ -30,17 +30,17 @@ pipeline {
 				
 				script {
 				
-				  if (env.BRANCH_NAME == 'develop' || env.BRANCH_NAME.startsWith('feature') || env.BRANCH_NAME.startsWith('jenkins')) {
+				  if (env.BRANCH_NAME == 'develop' || env.BRANCH_NAME.startsWith('feature')) {
 					echo "Running a snapshot build from branch ${env.BRANCH_NAME}"
 					// def mvnHome = tool name: 'M3', type: 'maven'
 					// def mvnCMD = "${mvnHome}/bin/mvn"
 					// sh "${mvnCMD} package -e"
 					bat "%mvnHome%\\mvn package -e"
 				  }	
-				  if (env.BRANCH_NAME.startsWith('release') || env.BRANCH_NAME == 'master' ) {
+				  else if (env.BRANCH_NAME.startsWith('release') || env.BRANCH_NAME == 'master' ) {
 				  	echo "Running a release build from branch ${env.BRANCH_NAME}"
 					// sh 'mvn install'
-					bat "%mvnHome%\\mvn package -e"
+					bat "%mvnHome%\\mvn install -e"
 				  }
 				  
 				  else {				  
