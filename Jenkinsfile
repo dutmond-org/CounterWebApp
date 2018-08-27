@@ -43,15 +43,14 @@ pipeline {
 					bat "%mvnHome%\\mvn package -e"
 				  }
 				  
-				  else {
-				  
-				              try {
-            bat 'exit 1'
-        }
-        catch (Exception e) {
-            echo 'Something failed, I should sound the klaxons!'
-            throw e
-        }
+				  else {				  
+				  	try {
+            				bat 'exit 1'
+        			}
+        			catch (Exception e) {
+            			echo 'The branch name does not meet Fifth Third branch naming standard'
+            			throw e;
+        			}
 				  }
 
 				  
