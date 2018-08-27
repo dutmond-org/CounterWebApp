@@ -37,7 +37,7 @@ pipeline {
 					// sh "${mvnCMD} package -e"
 					bat "%mvnHome%\\mvn package -e"
 				  }	
-				  if (env.BRANCH_NAME.startsWith('release') || env.BRANCH_NAME == 'master' ) {
+				  else if (env.BRANCH_NAME.startsWith('release') || env.BRANCH_NAME == 'master' ) {
 				  	echo "Running a release build from branch ${env.BRANCH_NAME}"
 					// sh 'mvn install'
 					bat "%mvnHome%\\mvn install -e"
