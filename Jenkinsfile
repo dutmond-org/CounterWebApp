@@ -49,11 +49,11 @@ pipeline {
 		
 		stage (Deploy) {
 			steps {
-				script {
+
 					def jobnameparts = JOB_NAME.tokenize('/') as String[]
 					def repositoryname = jobnameparts[1]
 					sshPublisher(publishers: [sshPublisherDesc(configName: 'cloud-server1', transfers: [sshTransfer(excludes: '', execCommand: 'mv /home/user/opt/tomcat/apache-tomcat-8.5.33/webapps/${repositoryname}.war /opt/tomcat/apache-tomcat-8.5.33/webapps/', execTimeout: 120000, flatten: false, makeEmptyDirs: false, noDefaultExcludes: false, patternSeparator: '[, ]+', remoteDirectory: '/opt/tomcat/apache-tomcat-8.5.33/webapps', remoteDirectorySDF: false, removePrefix: 'target', sourceFiles: 'target/*.war')], usePromotionTimestamp: false, useWorkspaceInPromotion: false, verbose: false)])
-			    }
+			    
 			}
 		}
 	}
