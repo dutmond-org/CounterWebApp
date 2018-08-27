@@ -37,11 +37,22 @@ pipeline {
 					// sh "${mvnCMD} package -e"
 					bat "%mvnHome%\\mvn package -e"
 				  }	
-				  if (env.BRANCH_NAME.startsWith('release') || env.BRANCH_NAME == 'master' ) {
+				  if (env.BRANCH_NAME.startsWith('release') || env.BRANCH_NAME == 'masterfe' ) {
 				  	echo "Running a release build from branch ${env.BRANCH_NAME}"
 					// sh 'mvn install'
 					bat "%mvnHome%\\mvn package -e"
 				  }
+				  
+				  else {
+				              try {
+            bat 'exit 1'
+        }
+        catch (exc) {
+            echo 'Something failed, I should sound the klaxons!'
+            throw
+        }
+				  }
+
 				  
 				}	  
 			}
