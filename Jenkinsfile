@@ -30,7 +30,7 @@ pipeline {
 				
 				script {
 				
-				  if (env.BRANCH_NAME == 'develop' || env.BRANCH_NAME.startsWith('featuresc') || env.BRANCH_NAME == 'featurefs') {
+				  if (env.BRANCH_NAME == 'develop' || env.BRANCH_NAME.startsWith('feature')) {
 					echo "Running a snapshot build from branch ${env.BRANCH_NAME}"
 					// def mvnHome = tool name: 'M3', type: 'maven'
 					// def mvnCMD = "${mvnHome}/bin/mvn"
