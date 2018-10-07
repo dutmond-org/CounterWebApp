@@ -58,7 +58,11 @@ pipeline {
 			}
 		}
 		
-		stage (Deploy) {
+		stage('Publish Artifact') {
+			input id: 'TargetEnv', message: 'publish artifact?', ok: 'yes', parameters: [choice(choices: ['snapshot', 'release'], description: 'choose binary type', name: 'binary')], submitter: 'admin'
+		}
+		
+		stage ('Deploy') {
 			steps {
 				script {
 					echo "deploying ${repositoryname} to tomcat server in the cloud"
