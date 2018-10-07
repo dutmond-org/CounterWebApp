@@ -67,7 +67,7 @@ pipeline {
 					)
 					// echo ("Env: "+userInput['binary'])
 					// echo ("Env: "+userInput)
-					echo " artifact type is +userInput"
+					echo "artifact type is ${userInput}"
 				}				
 			}
 		}
