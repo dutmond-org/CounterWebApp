@@ -63,7 +63,8 @@ pipeline {
 				// input id: 'TargetEnv', message: 'publish artifact?', ok: 'yes', parameters: [choice(choices: ['snapshot', 'release'], description: 'choose binary type', name: 'binary')], submitter: 'admin'
 				script {				
 					def userInput = input(
-						id: 'TargetEnv', message: 'publish artifact?', ok: 'yes', parameters: [choice(choices: ['snapshot', 'release'], description: 'choose binary type', name: 'binary')], submitter: 'admin'
+						// id: 'TargetEnv', message: 'publish artifact?', ok: 'yes', parameters: [choice(choices: ['snapshot', 'release'], description: 'choose binary type', name: 'binary')], submitter: 'admin'
+						id: 'TargetEnv', message: 'publish artifact?', ok: 'yes', parameters: [choice(choices: ['snapshot', 'release'], description: 'choose binary type', name: 'binary'), choice(choices: ['eastern', 'pacific'], description: 'choose timezone', name: 'timezone')], submitter: 'admin'
 					)
 					// echo ("Env: "+userInput['binary'])
 					// echo ("Env: "+userInput)
