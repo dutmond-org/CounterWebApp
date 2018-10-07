@@ -69,6 +69,7 @@ pipeline {
 					// echo ("Env: "+userInput['binary'])
 					// echo ("Env: "+userInput)
 					echo "artifact type is ${userInput['binary']}"
+					echo "deployment timezone is ${userInput['timezone']}"
 				}				
 			}
 		}
