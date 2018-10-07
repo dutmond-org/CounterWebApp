@@ -59,7 +59,9 @@ pipeline {
 		}
 		
 		stage('Publish Artifact') {
-			input id: 'TargetEnv', message: 'publish artifact?', ok: 'yes', parameters: [choice(choices: ['snapshot', 'release'], description: 'choose binary type', name: 'binary')], submitter: 'admin'
+			steps {
+				input id: 'TargetEnv', message: 'publish artifact?', ok: 'yes', parameters: [choice(choices: ['snapshot', 'release'], description: 'choose binary type', name: 'binary')], submitter: 'admin'
+			}
 		}
 		
 		stage ('Deploy') {
