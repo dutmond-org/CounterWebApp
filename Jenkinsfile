@@ -64,12 +64,14 @@ pipeline {
 				script {				
 					def userInput = input(
 						// id: 'TargetEnv', message: 'publish artifact?', ok: 'yes', parameters: [choice(choices: ['snapshot', 'release'], description: 'choose binary type', name: 'binary')], submitter: 'admin'
-						id: 'TargetEnv', message: 'publish artifact?', ok: 'yes', parameters: [choice(choices: ['snapshot', 'release'], description: 'choose binary type', name: 'binary'), choice(choices: ['eastern', 'pacific'], description: 'choose timezone', name: 'timezone')], submitter: 'admin'
+						// id: 'TargetEnv', message: 'publish artifact?', ok: 'yes', parameters: [choice(choices: ['snapshot', 'release'], description: 'choose binary type', name: 'binary'), choice(choices: ['eastern', 'pacific'], description: 'choose timezone', name: 'timezone')], submitter: 'admin'
+					id: 'TargetEnv', message: 'publish artifact?', ok: 'yes', parameters: [choice(choices: ['snapshot', 'release'], description: 'choose binary type', name: 'binary'), choice(choices: ['eastern', 'pacific'], description: 'choose timezone', name: 'timezone'), string(defaultValue: 'Dev', description: 'enter property set', name: 'propset', trim: true)], submitter: 'admin'
 					)
 					// echo ("Env: "+userInput['binary'])
 					// echo ("Env: "+userInput)
 					echo "artifact type is ${userInput['binary']}"
 					echo "deployment timezone is ${userInput['timezone']}"
+					echo "property set for binary is ${userInput['propset']}"
 				}				
 			}
 		}
