@@ -66,7 +66,8 @@ pipeline {
 						id: 'TargetEnv', message: 'publish artifact?', ok: 'yes', parameters: [choice(choices: ['snapshot', 'release'], description: 'choose binary type', name: 'binary')], submitter: 'admin'
 					)
 					// echo ("Env: "+userInput['binary'])
-					echo ("Env: "+userInput)
+					// echo ("Env: "+userInput)
+					echo " artifact type is +userInput"
 				}				
 			}
 		}
