@@ -59,7 +59,7 @@ pipeline {
 		}
 		
 		stage('Publish Artifact') {
-			steps {
+			// steps {
 				input {
   message 'publish artifact?'
   id 'TargetEnv'
@@ -70,7 +70,7 @@ pipeline {
   }
 }
 
-			}
+			// }
 		}
 		
 		stage ('Deploy') {
