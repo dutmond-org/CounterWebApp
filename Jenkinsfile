@@ -60,11 +60,11 @@ pipeline {
 		
 		stage('Publish Artifact') {
 			steps {
-				script {
-					def userInput = input{
+				// script {
+					def userInput = input {
 						input id: 'TargetEnv', message: 'publish artifact?', ok: 'yes', parameters: [choice(choices: ['snapshot', 'release'], description: 'choose binary type', name: 'binary')], submitter: 'admin'
 					}
-				}
+				// }
 			}
 		}
 		
