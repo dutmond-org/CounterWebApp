@@ -30,7 +30,7 @@ pipeline {
     // def scannerHome = tool 'sonar';
     withSonarQubeEnv {
 	    // bat "echo %scannerHome%"
-      bat "%scannerHome%\\sonar-scanner.bat"
+      bat "%scannerHome%\\sonar-scanner.bat && set"
     }
     }
     }
