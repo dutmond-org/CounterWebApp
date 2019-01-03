@@ -26,6 +26,7 @@ pipeline {
     // requires SonarQube Scanner 2.8+
     def scannerHome = tool 'sonar';
     withSonarQubeEnv('master') {
+	    sh "echo ${scannerHome}"
       sh "${scannerHome}/bin/sonar-scanner"
     }
     }
