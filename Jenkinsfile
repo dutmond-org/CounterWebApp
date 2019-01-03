@@ -25,7 +25,7 @@ pipeline {
 			script {
     // requires SonarQube Scanner 2.8+
     def scannerHome = tool 'sonar';
-    withSonarQubeEnv('master') {
+    withSonarQubeEnv {
 	    bat "echo %scannerHome%"
       bat "%scannerHome%\\bin\\sonar-scanner"
     }
