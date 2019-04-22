@@ -1,6 +1,4 @@
-def label = "cloudbees-${UUID.randomUUID().toString()}"
-	
-    	node(label) {				
+    	node(cloudbees-${UUID.randomUUID().toString()}) {				
 
 			stage('hello kube') {
 				sh 'echo hello world'
