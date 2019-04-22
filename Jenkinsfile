@@ -1,17 +1,11 @@
 def label = "cloudbees-${UUID.randomUUID().toString()}"
-pipeline {	
-    agent {
-        label 'label'
-    }
-	stages {
-
-		
-    	stage('Build') {				
+	
+    	node(label) {				
 
 			steps {
 				sh 'echo hello world'
 				
 			}
 		}
-	}
-}
+
+
