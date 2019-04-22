@@ -1,6 +1,7 @@
+def label = "cloudbees-${UUID.randomUUID().toString()}"
 pipeline {	
     agent {
-        label 'cloudbees'
+        label 'label'
     }
 	stages {
 
