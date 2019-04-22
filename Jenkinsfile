@@ -2,7 +2,7 @@ def label = "cloudbees-${UUID.randomUUID().toString()}"
 	
     	node(label) {				
 
-			steps {
+			stage('hello kube') {
 				sh 'echo hello world'
 				
 			}
