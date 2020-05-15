@@ -22,12 +22,3 @@ spec:
           name: nginxport1
           protocol: TCP 
       dnsPolicy: ClusterFirst
----
-apiVersion: v1
-data:
-  default.conf: 
-    - default.conf
-kind: ConfigMap
-metadata:
-  name: conf-d2
-  namespace: p-kwmx9-pipeline
