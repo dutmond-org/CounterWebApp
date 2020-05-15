@@ -29,5 +29,5 @@ data:
     {{ .Files.Get "default.conf" }}
 kind: ConfigMap
 metadata:
-  name: conf-d1
+  name: conf-d2
   namespace: p-kwmx9-pipeline
