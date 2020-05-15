@@ -2,6 +2,6 @@ stages:
 - name: build
   steps:
   - applyYamlConfig:
-      path: ./deployment.yaml
+      path: ./default-conf.yaml
 timeout: 60
 notification: {}
