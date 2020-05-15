@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: nginx01
+  name: nginx
   namespace: p-kwmx9-pipeline
 spec:
   replicas: 1
