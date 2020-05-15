@@ -25,7 +25,7 @@ spec:
 ---
 apiVersion: v1
 data:
-  default.conf: ./default.conf
+  default.conf: /default.conf
 kind: ConfigMap
 metadata:
   name: conf-d2
