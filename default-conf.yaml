@@ -48,5 +48,5 @@ data:
     }
 kind: ConfigMap
 metadata:
-  name: conf-d
+  name: conf-d2
   namespace: p-kwmx9-pipeline
