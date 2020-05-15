@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nginx01
+  namespace: p-kwmx9-pipeline
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: nginx
+  template:
+    metadata:
+      labels:
+        app: nginx
+    spec:
+      containers:
+      - image: nginx:stable
+        name: nginx
+        ports:
+        - containerPort: 80
+		  hostPort: 8081
+          name: nginxport
+          protocol: TCP
+      dnsPolicy: ClusterFirst
