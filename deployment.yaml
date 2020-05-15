@@ -18,7 +18,7 @@ spec:
         name: nginx
         ports:
         - containerPort: 80
-	  hostPort: 8081
-          name: nginxport
-          protocol: TCP
+          hostPort: 8081
+          name: 80tcp80810
+          protocol: TCP 
       dnsPolicy: ClusterFirst
